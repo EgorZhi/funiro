@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.html',{
+	"title":"Funiro"
+	}) 
+	<body>
+		<div class="wrapper">
+			<!--------------HEADER-------------->
+			@@include('html/_header.html',{})
+			<!---------------MAIN--------------->
+			<main class="page">
+				<!---------------MAIN SLIDER--------------->
+				<section class="page__main-slider main-slider">
+					<div class="main-slider__contanier _container">
+						<div class="main-slider__body">
+							<!-- Главный блок с описанием -->
+							<div class="main-slider__content contant-main">
+								<h1 class="contant-main__title">High-Quality
+									Furniture Just
+									For You</h1>
+								<div class="contant-main__text">Our furniture is made from selected and best quality materials that are suitable for your dream home</div>
+								<a href="" data-da=".main-slider__body,991.98" class="contant-main__button btn">Shop Now</a>
+							</div>
+							<!-- Слайдер -->
+							<div class="contant-main__slider slider-main">
+								<!-- Элементы управления слайдера -->
+								<div class="slider-main__controls controls-slider-main">
+										<!-- "точки" слайдера -->
+										<div class="controls-slider-main__dotts"></div>
+										<!-- "стрелки" слайдера -->
+										<div class="controls-slider-main__arrow slider-arrows">
+											<button type="button" class="slider-arrow slider-arrow_prev _icon-arrow-down"></button>
+											<button type="button" class="slider-arrow slider-arrow_next _icon-arrow-down"></button>
+										</div>
+								</div>
+								<!-- Тело слайдера -->
+								<div class="slider-main__body _swiper">
+									<div class="slider-main__slide">
+										<div class="slider-main__image _ibg">
+											<img src="@img/main-slider/01.jpg" alt="Image">
+										</div>
+										<!-- контентный блок слайдера "подпись слайдера" -->
+										<!-- Эффект Параллакса, изначально прозрачные и сдвинуты на -100%, при появлении класса active они появляются -->
+										<a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content">
+											<div class="slider-main__title">Bohauss 1</div>
+											<div class="slider-main__text">Luxury big sofa 1-seat</div>
+											<div class="slider-main__praice _icon-arrow-link">Rp 17.000.000</div>
+										</a>
+									</div>
+									<div class="slider-main__slide">
+										<div class="slider-main__image _ibg">
+											<img src="@img/main-slider/02.jpg" alt="Image">
+										</div>
+										<!-- контентный блок слайдера "подпись слайдера" -->
+										<a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content">
+											<div class="slider-main__title">Bohauss 2</div>
+											<div class="slider-main__text">Luxury big sofa 2-seat</div>
+											<div class="slider-main__praice _icon-arrow-link">Rp 17.000.000</div>
+										</a>
+									</div>
+									<div class="slider-main__slide">
+										<div class="slider-main__image _ibg">
+											<img src="@img/main-slider/03.jpg" alt="Image">
+										</div>
+										<!-- контентный блок слайдера "подпись слайдера" -->
+										<a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content">
+											<div class="slider-main__title">Bohauss 3</div>
+											<div class="slider-main__text">Luxury big sofa 3-seat</div>
+											<div class="slider-main__praice _icon-arrow-link">Rp 17.000.000</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!---------------SERVICES--------------->
+				<section class="page__advantages advantages">
+					<div class="advantages__container _container">
+						<div class="advantages__item">
+							<div class="advantages__icon">
+								<img src="@img/advantages/01.svg" alt="">
+							</div>
+							<h4 class="advantages__title">High Quality</h4>
+							<div class="advantages__text">crafted from top materials</div>
+						</div>
+						<div class="advantages__item">
+							<div class="advantages__icon">
+								<img src="@img/advantages/02.svg" alt="">
+							</div>
+							<h4 class="advantages__title">Warrany Protection</h4>
+							<div class="advantages__text">Over 2 years</div>
+						</div>
+						<div class="advantages__item">
+							<div class="advantages__icon">
+								<img src="@img/advantages/03.svg" alt="">
+							</div>
+							<h4 class="advantages__title">Free Shipping</h4>
+							<div class="advantages__text">Order over 150 $</div>
+						</div>
+						<div class="advantages__item">
+							<div class="advantages__icon">
+								<img src="@img/advantages/04.svg" alt="">
+							</div>
+							<h4 class="advantages__title">24 / 7 Support</h4>
+							<div class="advantages__text">Dedicated support</div>
+						</div>
+					</div>
+				</section>
+				<!---------------OUR PRODUCTS--------------->
+				<section class="page__products products">
+					<div class="products__container _container">
+						<h2 class="products__title _title">Our Products</h2>
+							<div class="products__items">
+								<!-- Элемент блока -->
+								<article data-pid="1" class="products__item item-product">
+									<!-- Фоновая картинка и иконки скидкок -->
+									<div class="item-product__labels">
+										<div class="item-product__label item-product__label_sale">-30%</div>
+										<div class="item-product__label item-product__label_new">New</div>
+									</div>
+									<a href="" class="item-product__image _ibg">
+										<img src="@img/products/01.jpg" alt="">
+									</a>
+									<!-- Блок с текстом -->
+									<div class="item-product__body">
+										<div class="item-product__content">
+											<div class="item-product__title">Syltherine</div>
+											<div class="item-product__text">Stylish cafe chair</div>
+										</div>
+										<div class="item-product__prices">
+											<!-- Блок с ценами -->
+											<div class="item-product__price">Rp 2.500.000</div>
+											<div class="item-product__price item-product__price_old">Rp 3.500.000</div>
+										</div>
+										<!-- Заглушка при наведении на блок с 3 элементами-->
+										<div class="item-product__actions actions-product">
+											<div class="actions-product__body">
+												<a href="" class="actions-product__button btn btn_white">Add to cart</a>
+												<a href="" class="actions-product__link _icon-share">Share</a>
+												<a href="" class="actions-product__link _icon-favorite">Like</a>
+											</div>
+										</div>
+									</div>
+								</article>
+								<!-- Элемент блока -->
+								<article data-pid="2" class="products__item item-product">
+									<!-- Фоновая картинка и иконки скидкок -->
+									<div class="item-product__labels">
+										<div class="item-product__label item-product__label_sale">-30%</div>
+										<div class="item-product__label item-product__label_new">New</div>
+									</div>
+									<a href="" class="item-product__image _ibg">
+										<img src="@img/products/01.jpg" alt="">
+									</a>
+									<!-- Блок с текстом -->
+									<div class="item-product__body">
+										<div class="item-product__content">
+											<div class="item-product__title">Syltherine</div>
+											<div class="item-product__text">Stylish cafe chair</div>
+										</div>
+										<div class="item-product__prices">
+											<!-- Блок с ценами -->
+											<div class="item-product__price">Rp 2.500.000</div>
+											<div class="item-product__price item-product__price_old">Rp 3.500.000</div>
+										</div>
+										<!-- Заглушка при наведении на блок с 3 элементами-->
+										<div class="item-product__actions actions-product">
+											<div class="actions-product__body">
+												<a href="" class="actions-product__button btn btn_white">Add to cart</a>
+												<a href="" class="actions-product__link _icon-share">Share</a>
+												<a href="" class="actions-product__link _icon-favorite">Like</a>
+											</div>
+										</div>
+									</div>
+								</article>
+								<!-- Элемент блока -->
+								<article data-pid="3" class="products__item item-product">
+									<!-- Фоновая картинка и иконки скидкок -->
+									<div class="item-product__labels">
+										<div class="item-product__label item-product__label_sale">-30%</div>
+										<div class="item-product__label item-product__label_new">New</div>
+									</div>
+									<a href="" class="item-product__image _ibg">
+										<img src="@img/products/01.jpg" alt="">
+									</a>
+									<!-- Блок с текстом -->
+									<div class="item-product__body">
+										<div class="item-product__content">
+											<div class="item-product__title">Syltherine</div>
+											<div class="item-product__text">Stylish cafe chair</div>
+										</div>
+										<div class="item-product__prices">
+											<!-- Блок с ценами -->
+											<div class="item-product__price">Rp 2.500.000</div>
+											<div class="item-product__price item-product__price_old">Rp 3.500.000</div>
+										</div>
+										<!-- Заглушка при наведении на блок с 3 элементами-->
+										<div class="item-product__actions actions-product">
+											<div class="actions-product__body">
+												<a href="" class="actions-product__button btn btn_white">Add to cart</a>
+												<a href="" class="actions-product__link _icon-share">Share</a>
+												<a href="" class="actions-product__link _icon-favorite">Like</a>
+											</div>
+										</div>
+									</div>
+								</article>
+								<!-- Элемент блока -->
+								<article data-pid="4" class="products__item item-product">
+									<!-- Фоновая картинка и иконки скидкок -->
+									<div class="item-product__labels">
+										<div class="item-product__label item-product__label_sale">-30%</div>
+										<div class="item-product__label item-product__label_new">New</div>
+									</div>
+									<a href="" class="item-product__image _ibg">
+										<img src="@img/products/01.jpg" alt="">
+									</a>
+									<!-- Блок с текстом -->
+									<div class="item-product__body">
+										<div class="item-product__content">
+											<div class="item-product__title">Syltherine</div>
+											<div class="item-product__text">Stylish cafe chair</div>
+										</div>
+										<div class="item-product__prices">
+											<!-- Блок с ценами -->
+											<div class="item-product__price">Rp 2.500.000</div>
+											<div class="item-product__price item-product__price_old">Rp 3.500.000</div>
+										</div>
+										<!-- Заглушка при наведении на блок с 3 элементами-->
+										<div class="item-product__actions actions-product">
+											<div class="actions-product__body">
+												<a href="" class="actions-product__button btn btn_white">Add to cart</a>
+												<a href="" class="actions-product__link _icon-share">Share</a>
+												<a href="" class="actions-product__link _icon-favorite">Like</a>
+											</div>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="products__footer">
+								<a class="products__more btn btn_white">Show More</a>
+							</div>
+					</div>
+				</section>
+				<!---------------BEAUTIFUL ROOMS--------------->
+				<section class="page__rooms rooms">
+					<div class="rooms__container _container">
+						<!-- Блок с контентом -->
+						<div class="rooms__body">
+							<h2 class="rooms__title _title">50+ Beautiful rooms 
+								inspiration</h2>
+							<div class="rooms__test">Our designer already made a lot of beautiful prototipe of rooms that inspire you</div>
+							<a href="" class="rooms__button btn">Explore More</a>
+						</div>
+						<!-- Блок слайдера -->
+						<div class="rooms__slider slider-rooms">
+							<!-- Слайды слайдера -->
+							<div class="slider-rooms__body _swiper">
+								<div class="slider-rooms__slide">
+									<div class="slider-rooms__image _ibg">
+										<img src="@img/rooms/01.jpg" alt="Bed Room">
+									</div>
+									<!-- Блок с текстом в слайдере -->
+									<a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-rooms__content _icon-arrow-link">
+										<div class="slider-rooms__label label-slider">
+											<div class="label-slider__number">01</div>
+											<div class="label-slider__line"></div>
+											<div class="label-slider__text">Bed Room</div>
+										</div>
+										<div class="slider__rooms__title">Inner Peace</div>
+									</a>
+								</div>
+								<div class="slider-rooms__slide">
+									<div class="slider-rooms__image _ibg">
+										<img src="@img/rooms/02.jpg" alt="Bed Room">
+									</div>
+									<!-- Блок с текстом в слайдере -->
+									<a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-rooms__content _icon-arrow-link">
+										<div class="slider-rooms__label label-slider">
+											<div class="label-slider__number">01</div>
+											<div class="label-slider__line"></div>
+											<div class="label-slider__text">Bed Room</div>
+										</div>
+										<div class="slider__rooms__title">Inner Peace</div>
+									</a>
+								</div>
+								<div class="slider-rooms__slide">
+									<div class="slider-rooms__image _ibg">
+										<img src="@img/rooms/03.jpg" alt="Bed Room">
+									</div>
+									<!-- Блок с текстом в слайдере -->
+									<a href="" data-swiper-parallax-opacity="0" data-swiper-parallax-y="-100%" class="slider-rooms__content _icon-arrow-link">
+										<div class="slider-rooms__label label-slider">
+											<div class="label-slider__number">01</div>
+											<div class="label-slider__line"></div>
+											<div class="label-slider__text">Bed Room</div>
+										</div>
+										<div class="slider__rooms__title">Inner Peace</div>
+									</a>
+								</div>
+							</div>
+							<!-- Навигационные стрелки для слайдера -->
+							<div class="slider-rooms__arrows slider-arrows">
+								<button type="button" class="slider-arrow slider-arrow_white slider-arrow_prev _icon-arrow-down"></button>
+								<button type="button" class="slider-arrow slider-arrow_white slider-arrow_next _icon-arrow-down"></button>
+							</div>
+							<!-- Навигационные точки для слайдера -->
+							<div class="slider-rooms__dotts"></div>
+						</div>
+					</div>
+				</section>
+				<!---------------Tips & Tricks--------------->
+				<section class="page__tips tips">
+					<div class="tips__container _container">
+						<h2 class="tips__title _title">Tips & Tricks</h2>
+						<div class="tips__slider slider-tips">
+							<div class="slider-tips__body _swiper">
+								<div class="slider-tips__slide">
+									<a href="" class="slider-tips__image _ibg">
+										<img src="@img/tips/01.jpg" alt="">
+									</a>
+									<div class="slider-tips__content">
+										<a href="" class="slider-tips__title">How to create a living 
+											room to love</a>
+										<div class="slider-tips__text">20 jan 2020</div>
+									</div>
+								</div>
+								<div class="slider-tips__slide">
+									<a href="" class="slider-tips__image _ibg">
+										<img src="@img/tips/02.jpg" alt="">
+									</a>
+									<div class="slider-tips__content">
+										<a href="" class="slider-tips__title">Solution for clean look working
+											space</a>
+										<div class="slider-tips__text">10 jan 2020</div>
+									</div>
+								</div>
+								<div class="slider-tips__slide">
+									<a href="" class="slider-tips__image _ibg">
+										<img src="@img/tips/03.jpg" alt="">
+									</a>
+									<div class="slider-tips__content">
+										<a href="" class="slider-tips__title">Make your cooking activity 
+											more fun with good setup</a>
+										<div class="slider-tips__text">20 jan 2020</div>
+									</div>
+								</div>
+							</div>
+							<div class="slider-tips__dotts"></div>
+							<div class="slider-tips__arrows slider-arrows">
+								<button type="button" class="slider-arrow slider-arrow_white slider-arrow_prev _icon-arrow-down"></button>
+								<button type="button" class="slider-arrow slider-arrow_white slider-arrow_next _icon-arrow-down"></button>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!---------------FuniroFurniture--------------->
+				<section class="page__furniture furniture">
+					<div class="furniture__container">
+						<div class="furniture__label">Share your setup with</div>
+						<div class="furniture__title _title">#FuniroFurniture</div>
+						<div data-speed="0.01" class="furniture__body">
+							<!-- Создаем grid-контейнер -->
+							<div class="furniture__items _gallery" id="_gallery">
+								<!-- 3 колонки в grid-контейнере -->
+								<!-- 1-ая колонка -->
+								<div class="furniture__column">
+									<!-- Верхний ряд первой колонки -->
+									<div class="furniture__row row-furniture row-furniture_left-top">
+										<a href="@img/furniture/01.jpg" class="row-furniture__item"><img src="@img/furniture/01.jpg" alt="Image"></a>
+										<a href="@img/furniture/02.jpg" class="row-furniture__item"><img src="@img/furniture/02.jpg" alt="Image"></a>
+									</div>
+									<!-- Нижний ряд первой колонки -->
+									<div class="furniture__row row-furniture row-furniture_left-bottom">
+										<a href="@img/furniture/06.jpg" class="row-furniture__item"><img src="@img/furniture/06.jpg" alt="Image"></a>
+										<a href="@img/furniture/07.jpg" class="row-furniture__item"><img src="@img/furniture/07.jpg" alt="Image"></a>
+									</div>
+								</div>
+								<!-- 2-ая колонка -->
+								<div class="furniture__column">
+									<div class="furniture__row row-furniture row-furniture_center">
+										<a href="@img/furniture/03.jpg" class="row-furniture__item"><img src="@img/furniture/03.jpg" alt="Image"></a>
+									</div>
+								</div>
+								<!-- 3-ая колонка -->
+									<!-- Верхний ряд третий колонки -->
+									<div class="furniture__column">
+									<div class="furniture__row row-furniture row-furniture_right-top">
+										<a href="@img/furniture/04.jpg" class="row-furniture__item"><img src="@img/furniture/04.jpg" alt="Image"></a>
+										<a href="@img/furniture/05.jpg" class="row-furniture__item"><img src="@img/furniture/05.jpg" alt="Image"></a>
+										<a href="@img/furniture/01.jpg" class="row-furniture__item"><img src="@img/furniture/01.jpg" alt="Image"></a>
+									</div>
+									<!-- Нижний ряд третий колонки -->
+									<div class="furniture__row row-furniture row-furniture_right-bottom">
+										<a href="@img/furniture/08.jpg" class="row-furniture__item"><img src="@img/furniture/08.jpg" alt="Image"></a>
+										<a href="@img/furniture/09.jpg" class="row-furniture__item"><img src="@img/furniture/09.jpg" alt="Image"></a>
+										<a href="@img/furniture/06.jpg" class="row-furniture__item"><img src="@img/furniture/06.jpg" alt="Image"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<!--------------FOOTER-------------->
+			@@include('html/_footer.html',{})
+		</div>
+		@@include('html/_popup.html',{})
+		@@include('html/_js.html',{})
+	</body>
+</html>

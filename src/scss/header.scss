@@ -1,0 +1,644 @@
+//====================================================================================================
+.header {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	// Заглушка для шапки, чтобы контент из main изчезал под шапкой
+	min-height: 40px;
+	@media (max-width:$mobile){
+		min-height: 5px;
+	}
+	&._scroll {
+		.header__wrapper {
+			background-color: rgba(255,255,255,0.8);
+			@media (any-hover: hover){
+				&:hover{
+					background-color: rgba(255,255,255,0.9);
+				}
+			}
+		}
+		.header__body {
+			min-height: 50px;
+			@media (max-width:$tablet){
+				min-height: 50px;
+			}
+		}
+	}
+	// </ЗАГЛУШКА ДЛЯ ШАПКИ>
+	// .header_wrapper
+	&__wrapper {
+		transition: background-color 0.3s ease 0s;
+		// фиксированная шапка
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 50;
+	}
+	// .header__container
+	&__container {
+	}
+	// .header__body
+	&__body {
+		transition: min-height 0.3s ease 0s;
+		display: flex;
+		align-items: center;
+		padding: 5px 0;
+		min-height: 125px;
+		// Для того чтобы выпадающая форма поиска также ограничивалась ограничивающим контейнером
+		position: relative;
+		@media (max-width:$tablet){
+			min-height: 80px;
+		}
+		@media (max-width:$mobile){
+			min-height: 50px;
+		}
+	}
+	// .header__main
+	&__main {
+		display: flex;
+		align-items: center;
+		// ширина блока лого + навигация
+		flex: 0 0 calc(494/1240 * 100%);
+		@media (max-width:$tablet){
+			flex: 1 1 auto;
+		}
+	}
+	// .header__logo
+	&__logo {
+		color: $black;
+		font-weight: 700;
+		font-size: 24px;
+		line-height: calc(29 / 24 * 100%);
+		text-decoration: none;
+		// Для того чтобы лого не исчезало в меню Бургер
+		position: relative;
+		z-index: 5;
+	}
+	// .header__menu
+	&__menu {
+	}
+	// .header__search
+	// расширение формы поиска, для дальнейшего скрытия в иконку
+	&__search {
+		padding: 0 32px 0 0;
+		@include adaptiveValue("padding-right", 32, 15);
+		@media (min-width:$tablet){
+			flex: 1 1 auto;
+		}		
+
+	}
+	// .header__actions
+	&__actions {
+	}
+}
+.menu {
+	// ширина блока с навигацией
+	flex: 0 1 420px;
+	// .menu__body
+	// Меню Бургер, формируем меню на маленьких экранах
+	&__body {
+		@media (max-width:$mobile){
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			top: 0;
+			// Скрываем меню, при нажатии на Бургер оно будет появляться
+			// убрать если нужно увидеть меню
+			left: -100%;
+			background-color: #fcf8f3;
+			transition: left 0.3s ease 0s;
+			padding: 70px 15px 30px 15px;
+			// Заглушка для шапки, чтобы навигация не налазила на шапку при прокрутке
+			&::before {
+				content: '';
+				position: fixed;
+				width: 100%;
+				height: 50px;
+				top: 0;
+				// Скрываем меню, при нажатии на Бургер оно будет появляться
+				// убрать если нужно увидеть меню
+				left: -100%;
+				transition: left 0.3s ease 0s;
+				background-color: #fcf8f3;
+				z-index: 2;
+			}
+			// При появлении класса _active (происходит при нажатии на меню бургер)
+			// меню снова появляется
+			&._active{
+				left: 0;
+				&::before {
+					left: 0;
+				}
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		@media (min-width: $mobile) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+		}
+	}
+	// .menu__item
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 0px 3px;
+		// отступ безопасности
+		padding: 5px 3px;
+		position: relative;
+		// правила применяются к устройствам где есть мышь, курсор
+		// для тачскринов используется js
+		@media (any-hover: hover) {
+			&:hover {
+				// показываем подменю
+				.menu__sub-list {
+					opacity: 1;
+					transform: translate(0, 0);
+					visibility: visible;
+					pointer-events: auto;
+				}
+				// поворот иконки "стрелка" при наведении
+				.menu__arrow {
+					transform: rotate(-180deg);
+				}
+				// меняем цвет при наведении на элементы навигации
+				.menu__arrow,
+				.menu__link {
+					color: $orange; 
+				}
+			}
+		}
+		// правила применяются к тачскринам > 768px
+		// для тачскринов используется js
+		@media (min-width: $mobile) {
+			&._hover {
+				.menu__sub-list {
+					opacity: 1;
+					transform: translate(0, 0);
+					visibility: visible;
+					pointer-events: auto;
+				}
+				// поворот иконки "стрелка" при наведении
+				.menu__arrow {
+					transform: rotate(-180deg);
+				}
+				// меняем цвет при наведении на элементы навигации
+				.menu__arrow,
+				.menu__link {
+					color: $orange; 
+				}
+			}
+		}
+		// Отступы для заголовков меню
+		@media (max-width:$mobile){
+			 margin: 0 0 15px 0;
+			 &:last-child {
+				 margin-bottom: 0;
+			 } 
+		}
+	}
+	// .menu__link
+	&__link {
+		font-weight: 500;
+		color: $gray1;
+		text-decoration: none;
+		transition: color 0.3s ease 0s;
+		@media (max-width:$mobile){
+			 font-size: 24px;
+			 font-weight: 600; 
+		}
+	}
+	// .menu__arrow
+	&__arrow {
+		// стили иконки "icon-arrow-down"
+		margin: 0px 0px 0px 8px;
+		// иконка будет анимирована
+		transition: all 0.3s ease 0s;
+		font-size: 8px;
+		@media (max-width:$mobile){
+			font-size: 14px;
+			// Вращение иконки стрелки на мобильных устройствах
+			&._active {
+				transform: rotate(-180deg);
+			} 
+	   }
+
+	}
+	// .menu__sub-list
+	// стили для подменю
+	&__sub-list {
+		position: relative;
+		background-color: $orange;
+		padding: 15px;
+		flex: 1 1 100%;
+		// задаем стили для ПК
+		@media (min-width: $mobile) {
+			// скрываем подменю и задаем анимацию при появлении
+			opacity: 0;
+			transition: all 0.3s ease 0s;
+			transform: translate(0, 10px);
+			visibility: hidden;
+
+			min-width: 200px;
+			left: 0;
+			pointer-events: none;
+			position: absolute;
+			top: 100%;
+			z-index: 5;
+		}
+		// Отступы для спойлеров
+		@media (max-width:$mobile){
+			 margin: 10px -15px 0 -15px; 
+		}
+	}
+	// .menu__sub-item
+	&__sub-item {
+		&:not(:last-child) {
+			// отступы между элементами списка
+			margin: 0 0 5px 0;
+			// расстояние между пунктами подменю 
+			@media (max-width:$mobile){
+				margin: 0 0 10px 0;
+			}
+		}
+	}
+	// .menu__sub-link
+	&__sub-link {
+		color: #fff;
+		line-height: 120%;
+		text-decoration: none;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		// шрифт пунктов подменю 
+		@media (max-width:$mobile){
+			font-size: 18px;
+		}
+	}
+}
+.search-form {
+	max-width: 473px;
+	// появление формы поиска при классе _active
+	&._active {
+		.search-form__item {
+			opacity: 1;
+			top: 100%;
+			visibility: visible;
+		}
+		.search-form__icon {
+			color: $orange;
+		}
+	}
+	// .search-form__icon
+	// временно скрываем вторую иконку поиска
+	// она будет появляться при определенных условиях
+	&__icon {
+		// стили для второй иконки поиска
+		position: relative;
+		z-index: 5;
+		font-size: 22px;
+		color: $gray1;
+		// скрываем вторую иконку поиска на экранах с разрешением 768 и выше
+		@media (min-width:$tablet){
+			display: none;
+		}
+
+	}
+	// .search-form__item
+	&__item {
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		// Скрытие формы на разрешении 768 и меньше
+		// будет одна иконка поиска
+		@media (max-width:$tablet){
+			box-shadow: 0 0 5px rgba(212, 209, 205, 0.3);
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: -100%;
+			z-index: 5;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s ease 0s;
+		}
+	}
+	// .search-form__btn
+	&__btn {
+		flex: 0 0 45px;
+		height: 45px;
+		font-size: 15px;
+		color: #333333;
+	}
+	// .search-form__input
+	&__input {
+		font-size: 14px;
+		color: $gray3;
+		width: 100%;
+		padding: 0 20px 0 0;
+		outline: none;
+		border: none;
+	}
+}
+.actions-header {
+	position: relative;
+	z-index: 5;
+	display: grid;
+	grid-template-columns: auto;
+	grid-auto-flow: column;
+	align-items: center;
+	@include adaptiveValue("gap", 32, 15);
+	// .actions-header__item
+	&__item {
+		display: flex;
+		align-items: center;
+		// .actions-header__item_favorites
+		&_favorites {
+			color: $gray1;
+			font-size: 24px;
+			transition: color 0.3s ease 0s;
+			text-decoration: none;
+			@media (any-hover: hover) {
+				&:hover {
+					color: $orange;
+				}
+			}
+		}
+		// .actions-header__item_user
+		&_user {
+			overflow: hidden;
+			border-radius: 50%;
+			@include adaptiveValue("width", 40, 30);
+			@include adaptiveValue("height", 40, 30);
+		}
+	}
+}
+.cart-header {
+	// .cart-header__icon
+	&__icon {
+		color: $gray1;
+		font-size: 24px;
+		transition: color 0.3s ease 0s;
+		text-decoration: none;
+		position: relative;
+		display: block;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orange;
+			}
+		}
+		// Счетчик покупок
+		span {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			top: -10px;
+			right: -10px;
+			border-radius: 50%;
+			background-color: $red;
+			color: #fff;
+			font-size: 10px;
+		}
+	}
+	// .cart-header__body
+	&__body {
+		background: #f4f5f7;
+		border-top: 1px solid #e0e0e0;
+		border-bottom: 1px solid #e0e0e0;
+		position: absolute;
+		top: 60px;
+		right: 0;
+		padding: 15px 15px 15px 0;
+		width: 300px;
+		z-index: 5;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease 0s;
+		transform: translate(0px, 20px);
+		._active & {
+			opacity: 1;
+			visibility: visible;
+			transform: translate(0px, 0px);
+		}
+		@media (max-width:$tablet){
+			top: 50px;
+		}
+		@media (max-width:$mobile){
+			  position: fixed;
+			  top: 50px;
+			  left: 0;
+			  width: 100%;
+		}
+	}
+	// .cart-header__list
+	&__list {
+	}
+}
+.cart-list {
+}
+// .icon-menu {
+// 	display: none;
+// 	@media (max-width: $mobile) {
+// 		margin-left: 32px;
+// 		position: relative;
+// 		display: block;
+// 		width: 30px;
+// 		height: 30px;
+// 		cursor: pointer;
+// 		z-index: 5;
+// 		span {
+// 			transition: all 0.3s ease 0s;
+// 			top: calc(50% - 1px);
+// 			left: 0px;
+// 			position: absolute;
+// 			width: 100%;
+// 			height: 2px;
+// 			background-color: #000;
+// 			&:first-child {
+// 				top: 0px;
+// 			}
+// 			&:last-child {
+// 				top: auto;
+// 				bottom: 0px;
+// 			}
+// 		}
+// 		&._active {
+// 			span {
+// 				transform: scale(0);
+// 				&:first-child {
+// 					transform: rotate(-45deg);
+// 					top: calc(50% - 1px);
+// 				}
+// 				&:last-child {
+// 					transform: rotate(45deg);
+// 					bottom: calc(50% - 1px);
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		@include adaptiveValue("margin-left", 32, 15);
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		background: none;
+		border: none;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		&._active {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				top: calc(50% - 1px);
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - 1px);
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+//<Корзина с товарами>========================================================================================================================================================
+.cart-list {
+	overflow: auto;
+	max-height: 200px;
+	// .cart-list__image
+	&__image {
+		flex: 0 0 100px;
+		height: 100px;
+	}
+	// .cart-list__body
+	&__body {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 0px 0px 0px 10px;
+	}
+	// .cart-list__title
+	&__title {
+		color: inherit;
+		font-weight: 600;
+		transition: color 0.3s ease 0s;
+		margin: 0px 0px math.div(5px, 16px) * 1em 0px;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
+	// .cart-list__quantity
+	&__quantity {
+		font-size: 14px;
+		margin: 0px 0px math.div(5px, 14px) * 1em 0px;
+	}
+	// .cart-list__delete
+	&__delete {
+		color: red;
+		font-size: 14px;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	// .cart-list__item
+	&__item {
+		display: flex;
+		align-items: flex-start;
+		&:not(:last-child) {
+			margin: 0px 0px 15px 0px;
+		}
+	}
+}
+//====================================================================================================
+
+//Burger
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+
